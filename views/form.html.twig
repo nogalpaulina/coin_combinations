@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <title>Coin Combination</title>
+</head>
+<body>
+    <div class='container'>
+        <h1>Coin Combination</h1>
+        <p>We'll show you how to make change!</p>
+        <form action='/view_coin_combination'>
+            <div class='form-group'>
+              <label for='price'>Enter any amount in cents:</label>
+              <input id='price' name='price' class='form-control' type='text'>
+            </div>
+            <button type='submit' class='btn-success'>Check your change!</button>
+        </form>
+        </div>
+        <div class="container">
+          {% if result is not empty %}
+                <h3>Your change for {{price}} cents:</h3>
+                <ul>
+                {% for key,value in result %}
+                    <li>{{ value }} {{ key }}</li>
+                {% endfor %}
+                </ul>
+          {% endif %}      
+        </div>
+        <div>
+            <img src="img/coins.jpg">
+        </div>
+</body>
+</html>
